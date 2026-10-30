@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.env
+*.local
+dev.db
+dev.db-journal
+test.db
+test.db-journal
+coverage
+playwright-report
+test-results
