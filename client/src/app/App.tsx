@@ -1,7 +1,12 @@
+import { Providers } from "./providers";
+import { PrimitivesPreview } from "../components/ui/PrimitivesPreview";
+
 export function App() {
   return (
-    <main className="mx-auto max-w-[1040px] px-4 py-8 md:px-8">
-      <h1 className="font-serif text-3xl font-semibold text-ink">Student Register</h1>
-    </main>
+    <Providers>
+      <main className="min-h-screen bg-ground py-8 px-4 sm:px-6 lg:px-8">
+        <PrimitivesPreview />
+      </main>
+    </Providers>
   );
 }
