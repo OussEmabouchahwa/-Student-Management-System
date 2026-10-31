@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
 import { chromium } from "@playwright/test";
 import path from "node:path";
 import fs from "node:fs";
 
 async function main() {
   const screenshotsDir = path.resolve(process.cwd(), "docs/screenshots");
-  const artifactScreenshotsDir = "C:\\Users\\ousse\\.gemini\\antigravity\\brain\\efaf9400-47be-4cee-a3be-41f912e4545f\\screenshots";
+  const artifactScreenshotsDir =
+    "C:\\Users\\ousse\\.gemini\\antigravity\\brain\\efaf9400-47be-4cee-a3be-41f912e4545f\\screenshots";
 
   fs.mkdirSync(screenshotsDir, { recursive: true });
   fs.mkdirSync(artifactScreenshotsDir, { recursive: true });

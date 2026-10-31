@@ -42,7 +42,8 @@ export function ConfirmDialog({
             </AlertDialogPrimitive.Title>
 
             <AlertDialogPrimitive.Description className="mt-2.5 text-base text-ink-2 leading-relaxed">
-              <span className="font-bold text-ink">{studentName}</span> will be removed from the register. This can&apos;t be undone.
+              <span className="font-bold text-ink">{studentName}</span> will be removed from the
+              register. This can&apos;t be undone.
             </AlertDialogPrimitive.Description>
 
             <div className="mt-6 flex flex-col-reverse sm:flex-row sm:justify-end gap-3">

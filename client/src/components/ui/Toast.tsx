@@ -42,9 +42,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           <div
             className={cn(
               "flex items-center gap-3 rounded-md px-5 py-3 text-sm font-bold shadow-card select-none",
-              toast.type === "error"
-                ? "bg-danger text-white"
-                : "bg-ink text-white"
+              toast.type === "error" ? "bg-danger text-white" : "bg-ink text-white"
             )}
           >
             {toast.message}

@@ -12,14 +12,7 @@ export interface DrawerProps {
   footer?: ReactNode;
 }
 
-export function Drawer({
-  open,
-  onOpenChange,
-  title,
-  description,
-  children,
-  footer,
-}: DrawerProps) {
+export function Drawer({ open, onOpenChange, title, description, children, footer }: DrawerProps) {
   return (
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal>
@@ -69,15 +62,11 @@ export function Drawer({
           </div>
 
           {/* Body */}
-          <div className="flex-1 overflow-y-auto px-6 py-6">
-            {children}
-          </div>
+          <div className="flex-1 overflow-y-auto px-6 py-6">{children}</div>
 
           {/* Sticky footer */}
           {footer && (
-            <div className="sticky bottom-0 border-t border-rule bg-paper px-6 py-4">
-              {footer}
-            </div>
+            <div className="sticky bottom-0 border-t border-rule bg-paper px-6 py-4">{footer}</div>
           )}
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>

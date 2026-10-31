@@ -1,15 +1,7 @@
 import { Prisma, Student } from "@prisma/client";
 import { AppError } from "../../lib/app-error";
-import {
-  CreateStudentInput,
-  ListStudentsQuery,
-  UpdateStudentInput,
-} from "./students.schemas";
-import {
-  IStudentsRepository,
-  studentsRepository,
-  StudentListResult,
-} from "./students.repository";
+import { CreateStudentInput, ListStudentsQuery, UpdateStudentInput } from "./students.schemas";
+import { IStudentsRepository, studentsRepository, StudentListResult } from "./students.repository";
 
 export interface PaginatedResult<T> {
   data: T[];
@@ -67,10 +59,7 @@ export class StudentsService {
     try {
       return await this.repository.create(input);
     } catch (error) {
-      if (
-        error instanceof Prisma.PrismaClientKnownRequestError &&
-        error.code === "P2002"
-      ) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
         throw AppError.emailTaken();
       }
       throw error;
@@ -93,10 +82,7 @@ export class StudentsService {
     try {
       return await this.repository.update(id, input);
     } catch (error) {
-      if (
-        error instanceof Prisma.PrismaClientKnownRequestError &&
-        error.code === "P2002"
-      ) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
         throw AppError.emailTaken();
       }
       throw error;

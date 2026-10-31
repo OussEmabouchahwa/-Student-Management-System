@@ -18,7 +18,10 @@ export function EmptyState({ variant, onAction, className }: EmptyStateProps) {
         className
       )}
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tint text-navy mb-4" aria-hidden="true">
+      <div
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-tint text-navy mb-4"
+        aria-hidden="true"
+      >
         {isNoData ? <FolderOpen className="h-6 w-6" /> : <SearchX className="h-6 w-6" />}
       </div>
 
@@ -32,10 +35,7 @@ export function EmptyState({ variant, onAction, className }: EmptyStateProps) {
           : "Try searching with a different name, email, or clear your course filters."}
       </p>
 
-      <Button
-        variant={isNoData ? "primary" : "secondary"}
-        onClick={onAction}
-      >
+      <Button variant={isNoData ? "primary" : "secondary"} onClick={onAction}>
         {isNoData ? "+ Add student" : "Clear filters"}
       </Button>
     </div>

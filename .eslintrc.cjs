@@ -41,6 +41,7 @@ module.exports = {
     "coverage/",
     "playwright-report/",
     "test-results/",
+    "scripts/",
     "*.js",
   ],
 };

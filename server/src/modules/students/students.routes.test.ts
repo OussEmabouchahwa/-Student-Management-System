@@ -300,9 +300,7 @@ describe("Students API Integration Tests", () => {
         },
       });
 
-      const res = await request(app)
-        .patch(`/api/v1/students/${s2.id}`)
-        .send({ email: s1.email });
+      const res = await request(app).patch(`/api/v1/students/${s2.id}`).send({ email: s1.email });
 
       expect(res.status).toBe(409);
       expect(res.body.error.code).toBe("EMAIL_TAKEN");

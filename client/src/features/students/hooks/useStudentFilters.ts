@@ -48,7 +48,9 @@ export function useStudentFilters() {
   }, []);
 
   const setFilters = useCallback(
-    (updater: Partial<StudentFilterParams> | ((prev: StudentFilterParams) => StudentFilterParams)) => {
+    (
+      updater: Partial<StudentFilterParams> | ((prev: StudentFilterParams) => StudentFilterParams)
+    ) => {
       setFiltersState((prev) => {
         const next = typeof updater === "function" ? updater(prev) : { ...prev, ...updater };
         updateUrl(next);

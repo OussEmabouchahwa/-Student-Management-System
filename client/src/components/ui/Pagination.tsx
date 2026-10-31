@@ -34,8 +34,7 @@ export function Pagination({
       )}
     >
       <div className="text-sm font-normal text-ink-2">
-        Showing{" "}
-        <span className="tabular-nums font-bold text-ink">{start}</span> to{" "}
+        Showing <span className="tabular-nums font-bold text-ink">{start}</span> to{" "}
         <span className="tabular-nums font-bold text-ink">{end}</span> of{" "}
         <span className="tabular-nums font-bold text-ink">{total}</span>{" "}
         {total === 1 ? "student" : "students"}

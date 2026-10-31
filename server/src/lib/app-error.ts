@@ -1,9 +1,5 @@
 export type ErrorCode =
-  | "VALIDATION_ERROR"
-  | "STUDENT_NOT_FOUND"
-  | "EMAIL_TAKEN"
-  | "NOT_FOUND"
-  | "INTERNAL_ERROR";
+  "VALIDATION_ERROR" | "STUDENT_NOT_FOUND" | "EMAIL_TAKEN" | "NOT_FOUND" | "INTERNAL_ERROR";
 
 export class AppError extends Error {
   public readonly statusCode: number;

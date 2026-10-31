@@ -19,15 +19,11 @@ test.describe("Student Management E2E Lifecycle", () => {
 
     // 1. Visit the app
     await page.goto("/");
-    await expect(
-      page.getByRole("heading", { name: "Student Register", level: 1 })
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Student Register", level: 1 })).toBeVisible();
 
     // 2. Open Add Student drawer
     await page.getByRole("button", { name: "Add student" }).first().click();
-    await expect(
-      page.getByRole("heading", { name: "Add student record" })
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Add student record" })).toBeVisible();
 
     // 3. Fill the form
     await page.getByLabel("First name").fill("Dorothy");
@@ -54,18 +50,12 @@ test.describe("Student Management E2E Lifecycle", () => {
 
     // 7. Click student name to open signature Student ID card
     await studentBtn.click();
-    await expect(
-      page.getByText("Official Student Credential")
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "Dorothy Vaughan" })
-    ).toBeVisible();
+    await expect(page.getByText("Official Student Credential")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Dorothy Vaughan" })).toBeVisible();
 
     // 8. Click Edit from ID card
     await page.getByRole("button", { name: "Edit" }).click();
-    await expect(
-      page.getByRole("heading", { name: "Edit student record" })
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Edit student record" })).toBeVisible();
 
     // 9. Update GPA and save
     const gpaInput = page.getByLabel("Cumulative GPA");
@@ -80,9 +70,7 @@ test.describe("Student Management E2E Lifecycle", () => {
     await deleteBtn.click();
 
     // Confirm dialog must name the student and state consequences
-    await expect(
-      page.getByRole("heading", { name: "Delete student record" })
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Delete student record" })).toBeVisible();
     await expect(
       page.getByText(/Dorothy Vaughan.*will be removed from the register/i)
     ).toBeVisible();

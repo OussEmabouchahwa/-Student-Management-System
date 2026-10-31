@@ -1,16 +1,10 @@
 import { httpClient } from "../../../lib/http";
-import {
-  Student,
-  StudentFilterParams,
-  StudentListResponse,
-} from "../types";
+import { Student, StudentFilterParams, StudentListResponse } from "../types";
 import { StudentFormOutput } from "../schemas/student-form.schema";
 
 const BASE_URL = "/api/v1/students";
 
-export async function getStudents(
-  params: StudentFilterParams = {}
-): Promise<StudentListResponse> {
+export async function getStudents(params: StudentFilterParams = {}): Promise<StudentListResponse> {
   const searchParams = new URLSearchParams();
 
   if (params.page !== undefined) searchParams.set("page", String(params.page));

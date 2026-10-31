@@ -34,8 +34,12 @@ export function PrimitivesPreview() {
           <Button variant="primary">Primary Button</Button>
           <Button variant="secondary">Secondary Button</Button>
           <Button variant="destructive">Destructive Button</Button>
-          <Button variant="primary" isLoading>Loading</Button>
-          <Button variant="secondary" disabled>Disabled</Button>
+          <Button variant="primary" isLoading>
+            Loading
+          </Button>
+          <Button variant="secondary" disabled>
+            Disabled
+          </Button>
         </div>
       </section>
 
@@ -101,10 +105,7 @@ export function PrimitivesPreview() {
           <Button variant="secondary" onClick={() => setConfirmOpen(true)}>
             Open Confirm Dialog
           </Button>
-          <Button
-            variant="secondary"
-            onClick={() => showToast("Saved Ada Lovelace")}
-          >
+          <Button variant="secondary" onClick={() => showToast("Saved Ada Lovelace")}>
             Trigger Toast
           </Button>
         </div>
@@ -142,13 +143,7 @@ export function PrimitivesPreview() {
       <section className="space-y-3">
         <h3 className="font-serif text-xl font-semibold text-ink">States & Navigation</h3>
         <EmptyState variant="no-matches" onAction={() => setSearchVal("")} />
-        <Pagination
-          page={1}
-          limit={10}
-          total={42}
-          totalPages={5}
-          onPageChange={() => {}}
-        />
+        <Pagination page={1} limit={10} total={42} totalPages={5} onPageChange={() => {}} />
         <TableSkeletonRows rows={2} />
       </section>
     </div>

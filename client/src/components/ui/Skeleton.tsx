@@ -7,16 +7,17 @@ export interface SkeletonProps {
 
 export function Skeleton({ className }: { className?: string }) {
   return (
-    <div
-      className={cn("animate-pulse rounded-md bg-rule/70", className)}
-      aria-hidden="true"
-    />
+    <div className={cn("animate-pulse rounded-md bg-rule/70", className)} aria-hidden="true" />
   );
 }
 
 export function TableSkeletonRows({ rows = 5 }: { rows?: number }) {
   return (
-    <div className="flex flex-col divide-y divide-rule" role="status" aria-label="Loading student records">
+    <div
+      className="flex flex-col divide-y divide-rule"
+      role="status"
+      aria-label="Loading student records"
+    >
       {Array.from({ length: rows }).map((_, i) => (
         <div key={i} className="flex items-center justify-between p-4 gap-4">
           <div className="flex items-center gap-3 flex-1">

@@ -45,10 +45,7 @@ export function StudentRow({
           </div>
 
           <div className="flex items-center gap-1 shrink-0">
-            <IconButton
-              aria-label={`Edit ${fullName}`}
-              onClick={() => onEdit(student)}
-            >
+            <IconButton aria-label={`Edit ${fullName}`} onClick={() => onEdit(student)}>
               <Edit2 className="h-4 w-4" aria-hidden="true" />
             </IconButton>
             <IconButton
@@ -97,9 +94,7 @@ export function StudentRow({
         <StudentHighlight text={student.course} query={searchQuery} />
       </td>
 
-      <td className="px-3 py-3.5 text-sm text-ink tabular-nums">
-        Year {student.year}
-      </td>
+      <td className="px-3 py-3.5 text-sm text-ink tabular-nums">Year {student.year}</td>
 
       <td className="px-3 py-3.5">
         <GpaMeter gpa={student.gpa} />
@@ -107,10 +102,7 @@ export function StudentRow({
 
       <td className="py-3.5 pl-3 pr-4 text-right whitespace-nowrap">
         <div className="flex items-center justify-end gap-1">
-          <IconButton
-            aria-label={`Edit ${fullName}`}
-            onClick={() => onEdit(student)}
-          >
+          <IconButton aria-label={`Edit ${fullName}`} onClick={() => onEdit(student)}>
             <Edit2 className="h-4 w-4" aria-hidden="true" />
           </IconButton>
           <IconButton

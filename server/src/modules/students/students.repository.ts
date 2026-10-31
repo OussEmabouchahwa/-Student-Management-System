@@ -106,8 +106,7 @@ export class StudentsRepository implements IStudentsRepository {
       updatePayload.email = data.email.toLowerCase();
     }
     if (data.gpa !== undefined) {
-      updatePayload.gpa =
-        data.gpa !== null ? Math.round(data.gpa * 100) / 100 : null;
+      updatePayload.gpa = data.gpa !== null ? Math.round(data.gpa * 100) / 100 : null;
     }
     return this.db.student.update({
       where: { id },

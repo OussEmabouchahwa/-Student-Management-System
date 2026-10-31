@@ -3,11 +3,7 @@ import { Dialog } from "../../../components/ui/Dialog";
 import { Button } from "../../../components/ui/Button";
 import { GpaMeter } from "../../../components/ui/GpaMeter";
 import { Student } from "../types";
-import {
-  formatDate,
-  formatStudentNumber,
-  getInitials,
-} from "../../../lib/format";
+import { formatDate, formatStudentNumber, getInitials } from "../../../lib/format";
 
 export interface StudentIdCardProps {
   open: boolean;
@@ -17,13 +13,7 @@ export interface StudentIdCardProps {
   onDelete: (student: Student) => void;
 }
 
-export function StudentIdCard({
-  open,
-  onClose,
-  student,
-  onEdit,
-  onDelete,
-}: StudentIdCardProps) {
+export function StudentIdCard({ open, onClose, student, onEdit, onDelete }: StudentIdCardProps) {
   if (!student) return null;
 
   const fullName = `${student.firstName} ${student.lastName}`;
@@ -64,15 +54,11 @@ export function StudentIdCard({
               className="flex h-24 w-24 items-center justify-center rounded-xl bg-marker text-ink shadow-sm ring-4 ring-ground"
               aria-hidden="true"
             >
-              <span className="font-serif text-4xl font-bold tracking-tight">
-                {initials}
-              </span>
+              <span className="font-serif text-4xl font-bold tracking-tight">{initials}</span>
             </div>
 
             {/* Student Name & Number */}
-            <h2 className="mt-4 font-serif text-2xl font-bold text-ink">
-              {fullName}
-            </h2>
+            <h2 className="mt-4 font-serif text-2xl font-bold text-ink">{fullName}</h2>
 
             <div className="mt-1 inline-flex items-center rounded-sm bg-ground px-2.5 py-0.5 font-mono text-xs font-bold text-ink-2 tabular-nums">
               ID: {studentNumber}
@@ -98,9 +84,7 @@ export function StudentIdCard({
 
             <div>
               <dt className="text-xs font-normal text-ink-2">Phone</dt>
-              <dd className="font-bold text-ink truncate">
-                {student.phone || "—"}
-              </dd>
+              <dd className="font-bold text-ink truncate">{student.phone || "—"}</dd>
             </div>
 
             <div>

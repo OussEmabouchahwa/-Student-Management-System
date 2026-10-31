@@ -37,9 +37,7 @@ export function Field({
         <label htmlFor={id} className="text-[0.95rem] font-bold text-ink">
           {label}
         </label>
-        {optional && (
-          <span className="text-sm font-normal text-ink-2">(optional)</span>
-        )}
+        {optional && <span className="text-sm font-normal text-ink-2">(optional)</span>}
       </div>
 
       {children({

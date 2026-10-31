@@ -15,34 +15,34 @@ Principles:
 
 ## 2. Color tokens
 
-| Token | Hex | Use | Contrast |
-|---|---|---|---|
-| `--ground` | `#EFF1F6` | Page background | n/a |
-| `--paper` | `#FFFFFF` | Surfaces, inputs, table | n/a |
-| `--ink` | `#101A33` | Primary text | 16.5:1 on paper |
-| `--ink-2` | `#4A5472` | Secondary text, icons | 7.4:1 on paper |
-| `--rule` | `#DADFEA` | Dividers, table lines | decorative |
-| `--rule-strong` | `#AEB7CC` | Input and button borders | 3:1 or better on paper |
-| `--navy` | `#16245C` | Primary action, ID card header | 14:1 with white |
-| `--navy-deep` | `#0E1A4A` | Primary hover and pressed | |
-| `--tint` | `#E7EAF6` | Avatar background, icon-button hover | |
-| `--marker` | `#FFD23F` | Search highlight, ID portrait only | ink on marker 11:1 |
-| `--danger` | `#B42318` | Errors, destructive action | 6.3:1 on paper |
-| `--danger-soft` | `#FDECEA` | Destructive hover background | |
-| `--surface-hover` | `#F7F8FC` | Row hover, table header | |
+| Token             | Hex       | Use                                  | Contrast               |
+| ----------------- | --------- | ------------------------------------ | ---------------------- |
+| `--ground`        | `#EFF1F6` | Page background                      | n/a                    |
+| `--paper`         | `#FFFFFF` | Surfaces, inputs, table              | n/a                    |
+| `--ink`           | `#101A33` | Primary text                         | 16.5:1 on paper        |
+| `--ink-2`         | `#4A5472` | Secondary text, icons                | 7.4:1 on paper         |
+| `--rule`          | `#DADFEA` | Dividers, table lines                | decorative             |
+| `--rule-strong`   | `#AEB7CC` | Input and button borders             | 3:1 or better on paper |
+| `--navy`          | `#16245C` | Primary action, ID card header       | 14:1 with white        |
+| `--navy-deep`     | `#0E1A4A` | Primary hover and pressed            |                        |
+| `--tint`          | `#E7EAF6` | Avatar background, icon-button hover |                        |
+| `--marker`        | `#FFD23F` | Search highlight, ID portrait only   | ink on marker 11:1     |
+| `--danger`        | `#B42318` | Errors, destructive action           | 6.3:1 on paper         |
+| `--danger-soft`   | `#FDECEA` | Destructive hover background         |                        |
+| `--surface-hover` | `#F7F8FC` | Row hover, table header              |                        |
 
 Never introduce another hue. No gradients. No tinted near-black text.
 
 ## 3. Typography
 
-| Role | Family | Size / line-height | Weight |
-|---|---|---|---|
-| Display (page title) | Crimson Pro | `clamp(2.4rem, 5.5vw, 3.4rem)` / 1.02 | 600, letter-spacing -0.015em |
-| Heading 2 (drawer, empty state, ID name) | Crimson Pro | 2rem / 1.1 | 600 |
-| Heading 3 | Crimson Pro | 1.5rem / 1.15 | 600 |
-| Body | Atkinson Hyperlegible | 1rem / 1.5 | 400 |
-| Strong and labels | Atkinson Hyperlegible | 0.95rem to 1rem | 700 |
-| Small and helper | Atkinson Hyperlegible | 0.875rem / 1.45 | 400 |
+| Role                                     | Family                | Size / line-height                    | Weight                       |
+| ---------------------------------------- | --------------------- | ------------------------------------- | ---------------------------- |
+| Display (page title)                     | Crimson Pro           | `clamp(2.4rem, 5.5vw, 3.4rem)` / 1.02 | 600, letter-spacing -0.015em |
+| Heading 2 (drawer, empty state, ID name) | Crimson Pro           | 2rem / 1.1                            | 600                          |
+| Heading 3                                | Crimson Pro           | 1.5rem / 1.15                         | 600                          |
+| Body                                     | Atkinson Hyperlegible | 1rem / 1.5                            | 400                          |
+| Strong and labels                        | Atkinson Hyperlegible | 0.95rem to 1rem                       | 700                          |
+| Small and helper                         | Atkinson Hyperlegible | 0.875rem / 1.45                       | 400                          |
 
 Rules: sentence case everywhere, no all-caps labels, `font-variant-numeric: tabular-nums` on every number, maximum line length 70ch. The serif is for names, titles and initials only. Load both fonts with `font-display: swap` and fallbacks `Georgia, serif` and `system-ui, sans-serif`.
 

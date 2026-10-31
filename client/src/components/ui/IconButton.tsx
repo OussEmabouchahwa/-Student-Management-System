@@ -18,7 +18,8 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
           "w-10 h-10 min-w-[44px] min-h-[44px] sm:min-w-[40px] sm:min-h-[40px]",
           "text-ink-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed",
           variant === "default" && "hover:bg-tint hover:text-ink active:bg-rule",
-          variant === "destructive" && "hover:bg-danger-soft hover:text-danger active:bg-danger-soft/80",
+          variant === "destructive" &&
+            "hover:bg-danger-soft hover:text-danger active:bg-danger-soft/80",
           className
         )}
         {...props}

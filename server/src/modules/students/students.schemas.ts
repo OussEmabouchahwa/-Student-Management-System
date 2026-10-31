@@ -1,12 +1,6 @@
 import { z } from "zod";
 
-export const ALLOWED_SORT_FIELDS = [
-  "lastName",
-  "course",
-  "year",
-  "gpa",
-  "createdAt",
-] as const;
+export const ALLOWED_SORT_FIELDS = ["lastName", "course", "year", "gpa", "createdAt"] as const;
 
 export type SortField = (typeof ALLOWED_SORT_FIELDS)[number];
 export type SortOrder = "asc" | "desc";
@@ -26,10 +20,7 @@ export const createStudentSchema = z.object({
     .toLowerCase()
     .email("Enter a valid email address."),
   phone: z.string().trim().optional().nullable(),
-  course: z
-    .string({ required_error: "Course is required." })
-    .trim()
-    .min(1, "Course is required."),
+  course: z.string({ required_error: "Course is required." }).trim().min(1, "Course is required."),
   year: z.coerce
     .number({ required_error: "Year is required." })
     .int("Year must be an integer.")
@@ -65,13 +56,11 @@ export const listStudentsQuerySchema = z.object({
       (val) => {
         const [field, order] = val.split(":");
         return (
-          ALLOWED_SORT_FIELDS.includes(field as SortField) &&
-          (order === "asc" || order === "desc")
+          ALLOWED_SORT_FIELDS.includes(field as SortField) && (order === "asc" || order === "desc")
         );
       },
       {
-        message:
-          "Sort must be one of lastName, course, year, gpa, createdAt with :asc or :desc.",
+        message: "Sort must be one of lastName, course, year, gpa, createdAt with :asc or :desc.",
       }
     )
     .transform((val) => {

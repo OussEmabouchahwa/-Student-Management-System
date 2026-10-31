@@ -7,10 +7,7 @@ import { Field } from "../../../components/ui/Field";
 import { Input } from "../../../components/ui/Input";
 import { Select } from "../../../components/ui/Select";
 import { Student } from "../types";
-import {
-  studentFormSchema,
-  StudentFormValues,
-} from "../schemas/student-form.schema";
+import { studentFormSchema, StudentFormValues } from "../schemas/student-form.schema";
 import { useStudentMutations } from "../hooks/useStudentMutations";
 import { useCourses } from "../hooks/useStudents";
 import { ApiError } from "../../../lib/http";
@@ -30,11 +27,7 @@ const YEAR_OPTIONS = [
   { label: "Year 6", value: 6 },
 ];
 
-export function StudentFormDrawer({
-  open,
-  onClose,
-  student,
-}: StudentFormDrawerProps) {
+export function StudentFormDrawer({ open, onClose, student }: StudentFormDrawerProps) {
   const isEdit = !!student;
   const { createStudent, updateStudent } = useStudentMutations();
   const { data: courses = [] } = useCourses();
@@ -129,20 +122,10 @@ export function StudentFormDrawer({
       }
       footer={
         <div className="flex items-center justify-end gap-3">
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={onClose}
-            disabled={isPending}
-          >
+          <Button type="button" variant="secondary" onClick={onClose} disabled={isPending}>
             Cancel
           </Button>
-          <Button
-            type="submit"
-            form="student-form"
-            variant="primary"
-            isLoading={isPending}
-          >
+          <Button type="submit" form="student-form" variant="primary" isLoading={isPending}>
             {isEdit ? "Save student" : "Add student"}
           </Button>
         </div>

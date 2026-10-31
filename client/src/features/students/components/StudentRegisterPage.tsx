@@ -106,7 +106,8 @@ export function StudentRegisterPage() {
               Failed to load students
             </h2>
             <p className="max-w-md text-ink-2 text-base mb-6">
-              There was a problem connecting to the registry service. Please verify your connection and try again.
+              There was a problem connecting to the registry service. Please verify your connection
+              and try again.
             </p>
             <Button variant="secondary" onClick={() => refetch()}>
               <RefreshCw className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -167,9 +168,7 @@ export function StudentRegisterPage() {
           if (!open) setStudentToDelete(null);
         }}
         studentName={
-          studentToDelete
-            ? `${studentToDelete.firstName} ${studentToDelete.lastName}`
-            : ""
+          studentToDelete ? `${studentToDelete.firstName} ${studentToDelete.lastName}` : ""
         }
         isLoading={deleteStudent.isPending}
         onConfirm={handleConfirmDelete}

@@ -1,11 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { Student } from "@prisma/client";
 import { StudentsService } from "./students.service";
-import {
-  IStudentsRepository,
-  StudentFilterParams,
-  StudentListResult,
-} from "./students.repository";
+import { IStudentsRepository, StudentFilterParams, StudentListResult } from "./students.repository";
 import { AppError } from "../../lib/app-error";
 import { CreateStudentInput, UpdateStudentInput } from "./students.schemas";
 
@@ -218,9 +214,7 @@ describe("StudentsService", () => {
       year: 3,
     });
 
-    await expect(
-      service.updateStudent(s2.id, { email: s1.email })
-    ).rejects.toThrowError(AppError);
+    await expect(service.updateStudent(s2.id, { email: s1.email })).rejects.toThrowError(AppError);
   });
 
   it("allows updating email to the same email on the same student", async () => {

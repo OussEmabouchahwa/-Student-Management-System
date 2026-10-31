@@ -1,10 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  formatGpa,
-  formatStudentNumber,
-  formatDate,
-  getInitials,
-} from "./format";
+import { formatGpa, formatStudentNumber, formatDate, getInitials } from "./format";
 
 describe("Formatting helpers", () => {
   describe("formatGpa", () => {

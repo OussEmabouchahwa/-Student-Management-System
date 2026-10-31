@@ -16,13 +16,13 @@ The interface is built around a registrar's workflow and a documented design sys
 
 ## Tech stack
 
-| Layer | Technology |
-|---|---|
+| Layer    | Technology                                                                               |
+| -------- | ---------------------------------------------------------------------------------------- |
 | Frontend | React 18, TypeScript, Vite, Tailwind CSS, Radix UI, TanStack Query, React Hook Form, Zod |
-| Backend | Node.js 20+, Express, TypeScript, Zod, Pino |
-| Database | SQLite through Prisma (switch to PostgreSQL by changing one line) |
-| Testing | Vitest, Supertest, Testing Library, Playwright |
-| Tooling | ESLint, Prettier, npm workspaces, GitHub Actions |
+| Backend  | Node.js 20+, Express, TypeScript, Zod, Pino                                              |
+| Database | SQLite through Prisma (switch to PostgreSQL by changing one line)                        |
+| Testing  | Vitest, Supertest, Testing Library, Playwright                                           |
+| Tooling  | ESLint, Prettier, npm workspaces, GitHub Actions                                         |
 
 ## Architecture
 
@@ -54,41 +54,41 @@ npm run dev            # client on :5173, API on :4000
 
 ## Scripts
 
-| Command | What it does |
-|---|---|
-| `npm run dev` | Start client and API together |
-| `npm run build` | Production build of both workspaces |
-| `npm run lint` | ESLint, zero warnings allowed |
-| `npm run typecheck` | `tsc --noEmit` on both workspaces |
-| `npm run format` | Prettier |
-| `npm run test` | Unit and integration tests |
-| `npm run test:coverage` | Tests with coverage report |
-| `npm run test:e2e` | Playwright end-to-end test |
-| `npm run db:migrate` | Apply Prisma migrations |
-| `npm run db:seed` | Insert sample students |
+| Command                 | What it does                        |
+| ----------------------- | ----------------------------------- |
+| `npm run dev`           | Start client and API together       |
+| `npm run build`         | Production build of both workspaces |
+| `npm run lint`          | ESLint, zero warnings allowed       |
+| `npm run typecheck`     | `tsc --noEmit` on both workspaces   |
+| `npm run format`        | Prettier                            |
+| `npm run test`          | Unit and integration tests          |
+| `npm run test:coverage` | Tests with coverage report          |
+| `npm run test:e2e`      | Playwright end-to-end test          |
+| `npm run db:migrate`    | Apply Prisma migrations             |
+| `npm run db:seed`       | Insert sample students              |
 
 ## Environment variables (`server/.env`)
 
-| Variable | Default | Purpose |
-|---|---|---|
-| `PORT` | `4000` | API port |
-| `DATABASE_URL` | `file:./dev.db` | Prisma connection string |
-| `CORS_ORIGIN` | `http://localhost:5173` | Allowed browser origin |
-| `NODE_ENV` | `development` | Runtime mode |
+| Variable       | Default                 | Purpose                  |
+| -------------- | ----------------------- | ------------------------ |
+| `PORT`         | `4000`                  | API port                 |
+| `DATABASE_URL` | `file:./dev.db`         | Prisma connection string |
+| `CORS_ORIGIN`  | `http://localhost:5173` | Allowed browser origin   |
+| `NODE_ENV`     | `development`           | Runtime mode             |
 
 ## API
 
 Base path: `/api/v1`
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/students` | List students. Query: `page`, `limit`, `q`, `course`, `sort` (for example `lastName:asc`) |
-| GET | `/students/courses` | Distinct course names |
-| GET | `/students/:id` | One student |
-| POST | `/students` | Create a student |
-| PATCH | `/students/:id` | Update one or more fields |
-| DELETE | `/students/:id` | Delete a student |
-| GET | `/health` | Health check |
+| Method | Endpoint            | Description                                                                               |
+| ------ | ------------------- | ----------------------------------------------------------------------------------------- |
+| GET    | `/students`         | List students. Query: `page`, `limit`, `q`, `course`, `sort` (for example `lastName:asc`) |
+| GET    | `/students/courses` | Distinct course names                                                                     |
+| GET    | `/students/:id`     | One student                                                                               |
+| POST   | `/students`         | Create a student                                                                          |
+| PATCH  | `/students/:id`     | Update one or more fields                                                                 |
+| DELETE | `/students/:id`     | Delete a student                                                                          |
+| GET    | `/health`           | Health check                                                                              |
 
 List response:
 
@@ -99,23 +99,29 @@ List response:
 Error response:
 
 ```json
-{ "error": { "code": "VALIDATION_ERROR", "message": "Check the highlighted fields.", "fields": { "email": "Enter a valid email address." } } }
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Check the highlighted fields.",
+    "fields": { "email": "Enter a valid email address." }
+  }
+}
 ```
 
 Status codes: `200`, `201`, `204`, `400` (validation), `404` (not found), `409` (email already used), `500`.
 
 ## Student model
 
-| Field | Type | Rules |
-|---|---|---|
-| `id` | string | Generated |
-| `firstName`, `lastName` | string | Required, trimmed |
-| `email` | string | Required, unique, stored lowercase |
-| `phone` | string | Optional |
-| `course` | string | Required |
-| `year` | integer | 1 to 6 |
-| `gpa` | number | Optional, 0 to 4, two decimals |
-| `createdAt`, `updatedAt` | datetime | Generated |
+| Field                    | Type     | Rules                              |
+| ------------------------ | -------- | ---------------------------------- |
+| `id`                     | string   | Generated                          |
+| `firstName`, `lastName`  | string   | Required, trimmed                  |
+| `email`                  | string   | Required, unique, stored lowercase |
+| `phone`                  | string   | Optional                           |
+| `course`                 | string   | Required                           |
+| `year`                   | integer  | 1 to 6                             |
+| `gpa`                    | number   | Optional, 0 to 4, two decimals     |
+| `createdAt`, `updatedAt` | datetime | Generated                          |
 
 ## Project structure
 

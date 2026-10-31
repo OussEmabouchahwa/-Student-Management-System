@@ -1,29 +1,16 @@
 import { z } from "zod";
 
 export const studentFormSchema = z.object({
-  firstName: z
-    .string()
-    .trim()
-    .min(1, "First name is required."),
-  lastName: z
-    .string()
-    .trim()
-    .min(1, "Last name is required."),
-  email: z
-    .string()
-    .trim()
-    .min(1, "Email is required.")
-    .email("Enter a valid email address."),
+  firstName: z.string().trim().min(1, "First name is required."),
+  lastName: z.string().trim().min(1, "Last name is required."),
+  email: z.string().trim().min(1, "Email is required.").email("Enter a valid email address."),
   phone: z
     .string()
     .trim()
     .optional()
     .nullable()
     .transform((val) => (val && val.length > 0 ? val : null)),
-  course: z
-    .string()
-    .trim()
-    .min(1, "Course is required."),
+  course: z.string().trim().min(1, "Course is required."),
   year: z.coerce
     .number({ invalid_type_error: "Year must be a number." })
     .int("Year must be an integer.")

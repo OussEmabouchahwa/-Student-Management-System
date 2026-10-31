@@ -8,12 +8,7 @@ export interface AvatarProps {
   className?: string;
 }
 
-export function Avatar({
-  firstName,
-  lastName,
-  size = "default",
-  className,
-}: AvatarProps) {
+export function Avatar({ firstName, lastName, size = "default", className }: AvatarProps) {
   const initials = getInitials(firstName, lastName);
 
   return (
