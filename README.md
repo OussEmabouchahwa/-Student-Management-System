@@ -4,6 +4,34 @@ A full-stack application for managing student records: add, view, update and del
 
 The interface is built around a registrar's workflow and a documented design system ([docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)). Each student's details open as a student ID card.
 
+## Screenshots
+
+### Student list
+
+| Desktop (1440px) | Tablet (768px) | Mobile (390px) |
+|---|---|---|
+| ![List desktop](docs/screenshots/list-desktop-1440px.png) | ![List tablet](docs/screenshots/list-tablet-768px.png) | ![List mobile](docs/screenshots/list-mobile-390px.png) |
+
+### Add / edit drawer
+
+| Desktop (1440px) | Tablet (768px) | Mobile (390px) |
+|---|---|---|
+| ![Drawer desktop](docs/screenshots/drawer-desktop-1440px.png) | ![Drawer tablet](docs/screenshots/drawer-tablet-768px.png) | ![Drawer mobile](docs/screenshots/drawer-mobile-390px.png) |
+
+### Student ID card
+
+| Desktop (1440px) | Tablet (768px) | Mobile (390px) |
+|---|---|---|
+| ![ID card desktop](docs/screenshots/idcard-desktop-1440px.png) | ![ID card tablet](docs/screenshots/idcard-tablet-768px.png) | ![ID card mobile](docs/screenshots/idcard-mobile-390px.png) |
+
+### Delete confirmation
+
+| Desktop (1440px) | Tablet (768px) | Mobile (390px) |
+|---|---|---|
+| ![Delete desktop](docs/screenshots/delete-desktop-1440px.png) | ![Delete tablet](docs/screenshots/delete-tablet-768px.png) | ![Delete mobile](docs/screenshots/delete-mobile-390px.png) |
+
+---
+
 ## Features
 
 - Add, edit and delete students with inline validation (client and server)
